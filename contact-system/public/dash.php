@@ -14,11 +14,10 @@
     echo "<h1 class='dash-head' style='text-align:center;'>Admin Dashboard</h1><hr>";
     echo "<div style='margin: 20px; text-align: left;'>";
     while($row = mysqli_fetch_assoc($result)){
-        echo "Name: " . htmlspecialchars($row['name']) . "<br>";
-        echo "Email: " . htmlspecialchars($row['email']) . "<br>";
-        echo "Message: " . htmlspecialchars($row['msg']) . "<br><br>";
-        // created_at TIMESTAMP 
-        echo "Recieved: " . htmlspecialchars($row['received']) . "<br><hr>";
+        echo "<b>Name: </b>" . htmlspecialchars($row['name']) . "<br>";
+        echo "<b>Email: </b>" . htmlspecialchars($row['email']) . "<br>";
+        echo "<b>Message: </b>" . htmlspecialchars($row['msg']) . "<br><br>";
+        echo "<b>Received: </b>" . htmlspecialchars($row['received']) . "<br><hr>";
     }
     echo "</div>";
 ?>
@@ -41,3 +40,4 @@
 
 
 </html>
+
