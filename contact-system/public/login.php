@@ -3,7 +3,6 @@
     include '../db/db.php';
 
     $alert = false;
-
     // Handle admin login form submission
     if($_POST) {
         $username = $_POST['username'];
@@ -27,6 +26,7 @@
     $alert = true;       //Invalid login
     } 
 ?>
+        
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,6 @@
     <title>Login</title>
     <link rel="stylesheet" href="../assets/index.css">
 </head>
-
 
 <body>
     <form method="post" class="container">
