@@ -1,5 +1,4 @@
 # PHP MySQL Apps
-
 ## About
 
 `php-mysql-apps` is a collection of **server-side web applications** developed using **PHP** and **MySQL**.
@@ -8,7 +7,6 @@ The repository focuses on implementing reliable backend logic, structured data h
 The projects emphasize clarity, modular design, and maintainable code suitable for internships and entry-level backend development roles.
 
 ---
-
 ## Technology Stack
 
 * PHP (Core PHP)
@@ -18,7 +16,6 @@ The projects emphasize clarity, modular design, and maintainable code suitable f
 * Apache (XAMPP / Localhost)
 
 ---
-
 ## Backend Capabilities Demonstrated
 
 * CRUD operations (Create, Read, Update, Delete)
@@ -29,7 +26,6 @@ The projects emphasize clarity, modular design, and maintainable code suitable f
 * Secure handling of user input and data flow
 
 ---
-
 ## Setup & Usage
 
 1. Install **XAMPP** or any local PHP server environment.
@@ -44,9 +40,7 @@ The projects emphasize clarity, modular design, and maintainable code suitable f
 6. Run the application through your local server.
 
 ---
-
 ## Purpose
-
 This repository is intended to:
 
 * Demonstrate backend development skills using PHP and MySQL
