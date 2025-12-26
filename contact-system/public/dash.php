@@ -1,12 +1,12 @@
 <?php
     session_start();
     include '../db/db.php';
-// Check if admin is logged in
+// admin is logged in?
     if(!isset($_SESSION['admin_id'])){
         header('Location: login.php');
         exit;
     }
-// Fetch messages from database
+// Fetch msg->DB
     $stat = $con->prepare("SELECT * FROM messages ORDER BY received DESC");
     $stat->execute();
     $result = $stat->get_result();
@@ -17,6 +17,7 @@
         echo "Name: " . htmlspecialchars($row['name']) . "<br>";
         echo "Email: " . htmlspecialchars($row['email']) . "<br>";
         echo "Message: " . htmlspecialchars($row['msg']) . "<br><br>";
+        // created_at TIMESTAMP 
         echo "Recieved: " . htmlspecialchars($row['received']) . "<br><hr>";
     }
     echo "</div>";
@@ -37,5 +38,6 @@
     <input type="button" class="contact-button" value="Logout"
         onclick="if(confirm('Are you sure you want to logout?')) window.location.href='logout.php'">
 </body>
+
 
 </html>
