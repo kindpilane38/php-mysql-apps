@@ -1,7 +1,8 @@
 <?php
-    $con = mysqli_connect("localhost", "root", "", "phpDb");
+    $con = new mysqli("localhost", "root", "", "phpDb");
 
-    if(!$con) {
-        die("Database connection failed: " . mysqli_connect_error());
+    if($con->connect_error) {
+        die("Database connection failed: " . mysqli->connect_error);
     }
+
 ?>
