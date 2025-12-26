@@ -1,10 +1,6 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    (the use of ', (), &, @,#, $, %, etc.)
-    in the TEXTAREA creates SQL ERROR!!
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    SOLUTION: Input validation & Santization
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--->
+     Input validation & Santization
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <?php
 include '../db/db.php';
 
@@ -12,7 +8,7 @@ if (!$_POST) {
     header('Location: index.php');
     exit();
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $name = trim($_POST["name"]);
     $email = trim($_POST["email"]);
@@ -43,4 +39,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //     echo "Error: " . $query . "<br>" . mysqli_error($con);
     // }
 }
+
 ?>
