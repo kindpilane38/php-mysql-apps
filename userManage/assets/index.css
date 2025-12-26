@@ -1,0 +1,102 @@
+h1 {
+  font-family: "Arial Black", sans-serif;
+  font-size: 35px;
+  margin-bottom: 0px;
+}
+form {
+  padding-left: 20px;
+}
+
+body {
+  background-color: #451a1a;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-style: italic;
+}
+.header {
+  color: rgb(252, 243, 188);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  background-color: rgba(45, 2, 2, 0.842);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 409px;
+  margin: auto;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+input,
+select,
+textarea {
+  margin-top: 8px;
+  padding: 2%;
+  border: 1px;
+  border-radius: 4px;
+  width: 90%;
+  box-sizing: border-box;
+  background-color: rgba(61, 46, 46, 0.9);
+  color: rgb(249, 235, 188);
+}
+input:focus {
+  border-color: #794130;
+  outline: 1px solid #794130;
+}
+label {
+  color: rgb(249, 235, 188);
+  font-weight: bold;
+  display: block;
+}
+
+input::placeholder {
+  color: rgb(249, 235, 188);
+  opacity: 0.7;
+}
+.select-holder {
+  color: rgba(249, 235, 188, 0.4);
+}
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+textarea:focus {
+  border-color: #794130;
+  outline: 1px solid #794130;
+}
+textarea::placeholder {
+  color: rgb(249, 235, 188);
+  opacity: 0.7;
+}
+button {
+  background-color: rgb(235, 222, 136);
+  color: black;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+  width: 90%;
+  margin: auto;
+}
+button:hover {
+  background-color: #d2bb56;
+}
+button:focus {
+  outline: 2px solid #728d06;
+}
+button:active {
+  background-color: #e9cc39;
+}
+
+footer {
+  text-align: center;
+  color: rgb(249, 235, 188);
+  margin-top: 20px;
+  font-size: 12px;
+}
