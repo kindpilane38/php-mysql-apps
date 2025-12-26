@@ -29,7 +29,7 @@ The projects emphasize clarity, modular design, and maintainable code suitable f
 2. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/php-mysql-apps.git
+   git clone https://github.com/kindpilane38/php-mysql-apps.git
    ```
 3. Place the project inside the server root directory (e.g., `htdocs`).
 4. Import the required SQL files into **phpMyAdmin**.
