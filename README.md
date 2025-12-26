@@ -1,7 +1,7 @@
 # PHP MySQL Apps
 ## About
 
-`php-mysql-apps` is a collection of **server-side web applications** developed using **PHP** and **MySQL**.
+(php-mysql-apps) is a collection of **server-side web applications** developed using **PHP** and **MySQL**.
 The repository focuses on implementing reliable backend logic, structured data handling, and database-driven workflows commonly used in real-world web applications.
 
 The projects emphasize clarity, modular design, and maintainable code suitable for internships and entry-level backend development roles.
