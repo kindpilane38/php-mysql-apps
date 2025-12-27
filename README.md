@@ -42,3 +42,9 @@ This repository is intended to:
 * Demonstrate backend development skills using PHP and MySQL
 * Showcase database-driven application logic
 
+---
+
+## Author
+
+**Dikshita**  
+BCA Student | Backend Development (PHP & MySQL)
