@@ -1,23 +1,22 @@
-# User Management System
+# Student Registration System
 
-A PHP–MySQL based web application that allows users to register and manage their
-information through basic backend functionality.
+A PHP–MySQL based web application that allows students to register their details
+and manage records using basic backend functionality.
 
-This project focuses on implementing core user management operations using
-structured PHP logic and database connectivity, without role-based access or
-admin-level control.
+This project focuses on implementing form handling, server-side validation, and
+CRUD operations using Core PHP and MySQL.
 
 ---
 
 ## Features
 
-- User registration with server-side validation
-- Secure password storage using hashing
-- View registered users list
-- Update user details
-- Delete user records
-- CRUD operations implemented using Core PHP
-- MySQL database integration
+- Student registration form
+- Server-side input validation and sanitization
+- Secure data storage using MySQL
+- View registered student records
+- Update student information
+- Delete student records
+- CRUD operations implemented with Core PHP
 
 ---
 
@@ -33,30 +32,30 @@ admin-level control.
 
 ## How It Works
 
-1. Users submit their details through a registration form.
+1. Students fill out the registration form with required details.
 2. Input data is validated and sanitized on the server side.
-3. Passwords are securely hashed before storing in the database.
-4. Registered users are stored in a MySQL database.
-5. User records can be viewed, updated, or deleted.
+3. Valid student records are stored in the MySQL database.
+4. Registered students can be viewed in a structured list.
+5. Student records can be updated or deleted as required.
 
 ---
 
 ## Purpose
 
 This project was built to practice:
-- PHP–MySQL database integration
+- PHP–MySQL integration
+- Form handling and validation
 - CRUD operations
-- Secure password handling
-- Backend form processing and validation
+- Structured backend logic
 
 ---
 
 ## Future Improvements
 
-- User authentication and login system
+- Login and authentication system
 - Session-based access control
-- Admin dashboard for user management
-- Improved UI and usability
+- Search and pagination for student records
+- Improved UI and form usability
 
 ---
 
@@ -64,3 +63,5 @@ This project was built to practice:
 
 **Dikshita**  
 BCA Student | Backend Development (PHP & MySQL)
+## Project Structure
+
