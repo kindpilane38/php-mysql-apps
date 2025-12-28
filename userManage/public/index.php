@@ -16,13 +16,13 @@
     <div class="container">
         <form action="add.php" method="post" id="form">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="enter your full name" /><br /><br />
+            <input type="text" id="name" name="name" placeholder="enter your full name" required><br><br>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="enter your email address" /><br /><br />
+            <input type="email" id="email" name="email" placeholder="enter your email address" required><br><br>
 
             <label for="phone">Phone No:</label>
-            <input type="text" id="phone" name="phone" placeholder="enter your phone number" /><br /><br />
+            <input type="text" id="phone" name="phone" placeholder="enter your phone number" required><br><br>
 
             <label for="course">Course:</label>
             <select id="course" name="course" required>
@@ -33,10 +33,10 @@
                 <option value="Data Science">Data Science</option>
                 <option value="Digital Marketing">Digital Marketing</option>
                 <option value="Graphic Design">Graphic Design</option>
-            </select><br /><br />
+            </select><br><br>
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="enter your message here..."></textarea><br /><br />
+            <textarea id="message" name="message" placeholder="enter your message here..."></textarea><br><br>
 
             <button type="submit">Register</button>
         </form>
