@@ -16,7 +16,7 @@ p {
   padding-top: 37px;
   margin: auto;
   max-width: 450px;
-  height: 440px;
+  height: 420px;
   background: #000;
   color: white;
   border-radius: 8px;
@@ -35,7 +35,7 @@ button {
   display: block;
   margin: auto;
   margin-top: 1px;
-  height: 4rcap;
+  height: 5rcap;
   width: 50%;
   border-radius: 20px;
   border-width: 0cap;
