@@ -4,5 +4,3 @@
     if($con->connect_error) {
         die("Database connection failed: " . mysqli->connect_error);
     }
-
-?>
