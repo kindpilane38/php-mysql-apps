@@ -1,49 +1,106 @@
+<?php if (isset($_GET['status'])):
+
+    if ($_GET['status'] === 'added'): ?>
+<script>
+alert('User added successfully.');
+window.history.replaceState({}, document.title, window.location.pathname);
+</script>
+<?php endif; ?>
+
+<?php if ($_GET['status'] === 'deleted'): ?>
+<script>
+alert('User deleted successfully.');
+window.history.replaceState({}, document.title, window.location.pathname);
+</script>
+<?php endif; ?>
+
+<?php if ($_GET['status'] === 'updated'): ?>
+<script>
+alert('User updated successfully.');
+window.history.replaceState({}, document.title, window.location.pathname);
+</script>
+<?php endif; ?>
+
+<?php endif; ?>
+
 <?php
 include '../db/db.php';
 
-if (isset($_GET["status"]) && $_GET["status"] === "added") {
-    echo "<script>alert('User added successfully!')</script>";
-}
-if (isset($_GET["status"]) && $_GET["status"] === "updated") {
-    echo "<script>alert('User updated successfully!')</script>";
-}
+// Fetch users
+$result = mysqli_query($con, "SELECT * FROM user_manage ORDER BY id DESC");
+?>
 
-$result = mysqli_query($con, $query = "SELECT * FROM user_manage ORDER BY id DESC");
-echo "<h1 style='margin: 15px 54px 15px 43%'>Registered Users</h1>";
+<!DOCTYPE html>
+<html lang="en">
 
-if (mysqli_num_rows($result) > 0) {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View List</title>
+    <link rel="stylesheet" href="../assets/view.css">
+</head>
 
-    echo "<table border='1' style='margin: auto;'>";
-    echo "<tr>";
-    echo "<th>ID</th>";
-    echo "<th>Name</th>";
-    echo "<th>Email</th>";
-    echo "<th>Course</th>";
-    echo "<th>Phone</th>";
-    echo "<th>Message</th>";
-    echo "<th>Actions</th>";
-    echo "</tr>";
+<body>
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['name'] . "</td>";
-        echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['course'] . "</td>";
-        echo "<td>" . $row['phone'] . "</td>";
-        echo "<td>" . $row['message'] . "</td>";
-        echo "<td>
-                <a href='edit.php?id=" . $row['id'] . "'>Edit</a> | 
-                <a href='delete.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to delete this user?');\">
-                Delete</a>
-                </td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    echo "No records found.";
-}
-echo "<center><button style='margin-top: 20px; font-size: 22px; border: 1px solid #000000ff; padding: 10px; width: fit-content; background-color: #007bff; color: white; border-radius: 5px;'>
-    <a href='index.php' style = 'color: white; text-decoration: none'> Add New User</a>
-    </button></center>";
-mysqli_close($con);
+    <h1>Registered Users</h1>
+
+    <?php if (mysqli_num_rows($result) !== 0) : ?>
+    <div>
+        <table border="1">
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Phone</th>
+                <th>Message</th>
+                <th>Actions</th>
+            </tr>
+
+
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+
+            <tr class="values">
+                <td><?= htmlspecialchars($row['id']) ?></td>
+                <td><?= htmlspecialchars($row['name']) ?></td>
+                <td><?= htmlspecialchars($row['email']) ?></td>
+                <td><?= htmlspecialchars($row['course']) ?></td>
+                <td><?= htmlspecialchars($row['phone']) ?></td>
+                <td><?= htmlspecialchars($row['message']) ?></td>
+
+                <td>
+                    <center>
+                        <a href="edit.php?id=<?= htmlspecialchars($row['id']) ?>">
+                            Edit
+                        </a> |
+
+                        <a href="delete.php?id=<?= htmlspecialchars($row['id']) ?>"
+                            onclick="return confirm('Are you sure you want to delete this student?'); " class="delete">
+                            Delete
+                        </a>
+                    </center>
+                </td>
+            </tr>
+
+            <?php endwhile; ?>
+        </table>
+    </div>
+    <?php else : ?>
+
+    <p>No records found.</p>
+
+    <?php endif; ?>
+
+    <!-- Add new user button -->
+
+    <center>
+        <button class="new-user" onclick="window.location.href='index.php'">
+            Add New User
+        </button>
+    </center>
+
+</body>
+
+</html>
+<?php mysqli_close($con); ?>
