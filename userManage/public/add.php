@@ -1,43 +1,43 @@
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     Input validation & Santization
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <?php
 include '../db/db.php';
 
-if (!$_POST) {
-    header('Location: index.php');
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: index.php");
     exit();
 }
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $name = trim($_POST["name"]);
-    $email = trim($_POST["email"]);
-    $phone = trim($_POST['phone']);
-    $message = trim($_POST['message']);
+// Collect & trim input
+$name    = trim($_POST["name"] ?? '');
+$email   = trim($_POST["email"] ?? '');
+$phone   = trim($_POST["phone"] ?? '');
+$course  = trim($_POST["course"] ?? '');
+$message = trim($_POST["message"] ?? '');
 
-    if (empty($name) || empty($email) || empty($phone)) {
-        echo "All fields are required.";
-    }
-    if (filter_var($eamil, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email address.";
-    }
-    $name = htmlspecialchars($name);
-    $email = htmlspecialchars($email);
-    $course = htmlspecialchars($course);
-    $phone = htmlspecialchars($phone);
-    $message = htmlspecialchars($message);
-
-    $stmt = $con->prepare("INSERT INTO user_manage (name, email, phone, course, message) VALUES (?,?,?,?,?)");
-    $stmt->bind_param("sssss", $name, $email, $phone, $course, $message);
-    $stmt->execute();
-
-    header("Location: view.php?status=added");
+// Validation
+if (empty($name) || empty($email) || empty($phone)) {
+    echo "All fields are required.";
     exit();
-    // if (mysqli_query($con, $query)) {
-    //     header("Location: view.php");
-    // } else {
-    //     echo "Error: " . $query . "<br>" . mysqli_error($con);
-    // }
 }
 
-?>
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email address.";
+    exit();
+}
+
+// Sanitization
+$name    = htmlspecialchars($name);
+$email   = htmlspecialchars($email);
+$phone   = htmlspecialchars($phone);
+$course  = htmlspecialchars($course);
+$message = htmlspecialchars($message);
+
+// Prepared statement
+$stmt = $con->prepare(
+    "INSERT INTO user_manage (name, email, phone, course, message) VALUES (?, ?, ?, ?, ?)"
+);
+$stmt->bind_param("sssss", $name, $email, $phone, $course, $message);
+$stmt->execute();
+
+// Redirect after success
+header("Location: view.php?status=added");
+exit();
