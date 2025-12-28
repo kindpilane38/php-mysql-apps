@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <input type="text" name="phone" class="phone" placeholder="enter your contact number" required><br><br>
 
         <button type="submit" class="submit">Submit</button>
-        <button type="button" class="view-list" onclick="window.location.href='view.php';">View List</button>
+        <!-- <button type="button" class="view-list" onclick="window.location.href='view.php';">View List</button> -->
 
     </form>
 
