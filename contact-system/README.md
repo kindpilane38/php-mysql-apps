@@ -19,6 +19,22 @@ server-side validation, and structured data handling.
 
 ---
 
+## Screenshots
+
+### Contact Form
+![Contact Form](images/contact-us.png)
+
+### Admin Dashboard
+![Admin Dashboard](images/admin-dash.png)
+
+### Admin Login
+![Admin-Login](images/admin-login.png)
+
+### Database Records
+![Database Records](images/db-records.png)
+
+---
+
 ## Tech Stack
 
 - PHP (Core PHP)
