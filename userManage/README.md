@@ -21,6 +21,19 @@ admin-level control.
 
 ---
 
+## Screenshots
+
+### User / Student Registration Form
+![Registration Form](img/reg-form.png)
+
+### Registered Users List
+![Registered Users](img/reg-Users.png)
+
+### Edit User Details
+![Edit User](img/edit-page.png)
+
+---
+
 ## Tech Stack
 
 - PHP (Core PHP)
