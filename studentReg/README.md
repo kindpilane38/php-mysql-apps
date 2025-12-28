@@ -20,6 +20,19 @@ CRUD operations using Core PHP and MySQL.
 
 ---
 
+## Screenshots
+
+### Student Registration Form
+![Student Registration Form](images/studentReg.png)
+
+### Registered Students List
+![Registered Students](images/student-list.png)
+
+### Edit Student Details
+![Edit Student](images/Edit-Form.png)
+
+---
+
 ## Tech Stack
 
 - PHP (Core PHP)
